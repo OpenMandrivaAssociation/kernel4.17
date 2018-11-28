@@ -26,7 +26,7 @@
 %define rpmrel		0.rc%{relc}.1
 %define tar_ver   	%{kernelversion}.%(expr %{patchlevel} - 1)
 %else
-%define rpmrel		1
+%define rpmrel		2
 %define tar_ver		%{kernelversion}.%{patchlevel}
 %endif
 %define buildrpmrel	%{rpmrel}%{rpmtag}
@@ -325,6 +325,8 @@ Patch146:	saa716x-4.15.patch
 # For newer versions, check
 # https://patchwork.kernel.org/project/LKML/list/?submitter=582
 Patch300:	v7-fs-Add-VirtualBox-guest-shared-folder-vboxsf-support.patch
+# Ported from https://marc.info/?l=linux-crypto-vger&m=153436754612783&q=raw
+Patch333:       workaround-udev-on-ryzen.patch
 
 # Patches to external modules
 # Marked SourceXXX instead of PatchXXX because the modules
